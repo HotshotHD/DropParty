@@ -40,11 +40,11 @@ class DropParty extends PluginBase {
 	}
 	
 	public function getDropPartyTask() {
-		return new DropPartyTask($this);
+	  return new DropPartyTask($this);
 	}
 	
 	public function getDropItemsTask() {
-		return new DropItemsTask($this);
+	  return new DropItemsTask($this);
 	}
 	
 	public function getRandomItem() {
