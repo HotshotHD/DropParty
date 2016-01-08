@@ -20,18 +20,18 @@ class DropPartyTask extends PluginTask {
 	}
 	
 	public function onRun($currentTick) {
-	  $this->getPlugin()->time = $this->getPlugin()->time - 1;
-		
+	  $msg = str_replace("{time}", $this->getPlugin()->config()["Time"], $this->getPlugin()->config()["Message.Countdown"]);
 	  if($this->getPlugin()->time > 0) {
-	    $this->getPlugin()->getServer()->broadcastMessage("§7[§dDropParty§7] §aStarting in §7" . $this->getPlugin()->time . " §amins.");
-	   }
-	  if($this->getPlugin()->time == 0) {
-	    $this->getPlugin()->getServer()->broadcastMessage("§7[§dDropParty§7]§a Has started!");
-	    $this->getPlugin()->status = "enabled";
-			
-	   }
-			
-			
-	}
+	    $this->getPlugin()->getServer()->broadcastMessage($msg);
+	  }
 		
-}
+	  if($this->getPlugin()->time == 0) {
+	    $this->getPlugin()->getServer()->broadcastMessage($this->getPlugin()->config()["Message.Started"]);
+            $this->getPlugin()->status = "enabled";		
+	  }
+			
+	  $this->getPlugin()->time = $this->getPlugin()->time - 1;
+
+          }
+		
+	}
