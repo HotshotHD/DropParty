@@ -1,6 +1,6 @@
 name: DropParty
 author: HotshotHD
-version: 1.0.0
+version: 1.0.1
 description: Schedule DropParties for your server
 main: dropparty\DropParty
 api: [1.12.0, 1.13.0]
