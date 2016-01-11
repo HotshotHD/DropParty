@@ -20,7 +20,7 @@ class DropPartyTask extends PluginTask {
 	}
 	
 	public function onRun($currentTick) {
-	  $msg = str_replace("{time}", $this->getPlugin()->config()["Time"], $this->getPlugin()->config()["Message.Countdown"]);
+	  $msg = str_replace("{time}", $this->getPlugin()->time, $this->getPlugin()->config()["Message.Countdown"]);
 	  if($this->getPlugin()->time > 0) {
 	    $this->getPlugin()->getServer()->broadcastMessage($msg);
 	  }
