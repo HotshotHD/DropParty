@@ -25,7 +25,7 @@ class DropItemsTask extends PluginTask {
 		  $level = $this->getPlugin()->getServer()->getLevelByName($this->getPlugin()->cfg["World"]);
 			
 		  foreach($this->getPlugin()->getServer()->getOnlinePlayers() as $p) {
-		    if($this->getPlugin()->config()["Popup"] == true) {
+		    if($this->getPlugin()->config()["Popup.Enabled"] == true) {
 		      $p->sendPopup($this->getPlugin()->config()["Popup.Message"]);
 		     }
 		    }
